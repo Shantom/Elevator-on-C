@@ -38,7 +38,7 @@ main()
 	{
 		th1 = CreateThread(NULL, 0, input_1, NULL, 0, NULL);
 		th2 = CreateThread(NULL, 0, output_1, NULL, CREATE_SUSPENDED, NULL);
-		while (head.floor_Number == 0)
+		while (head.floorNumber == 0)
 			;
 		ResumeThread(th2);
 }
@@ -53,19 +53,9 @@ main()
 }
 
 
-DWORD WINAPI input_1(LPVOID parameter)
-{
-	/*利用链表建立队列*/
-
-	list **current = &root;
-	while (1)
-	{
-
-	}
-}
 int innerReq(list *allCmd, int goal)
 {
-	(*allCmd).floor_Number = goal;
+	(*allCmd).floorNumber = goal;
 	(*allCmd).up_Down = 0;
 	return TRUE;
 }
@@ -80,9 +70,9 @@ DWORD WINAPI output_1(LPVOID parameter)
 		{
 			int i;
 
-			if (cur_floor<current->floor_Number)
+			if (cur_floor<current->floorNumber)
 			{
-				for (i = cur_floor; i < current->floor_Number; i++)
+				for (i = cur_floor; i < current->floorNumber; i++)
 				{
 					printf("当前楼层%d,正在向上运行\n", i);
 					Sleep(500);
@@ -91,9 +81,9 @@ DWORD WINAPI output_1(LPVOID parameter)
 				Sleep(2000);
 			}
 
-			else if (cur_floor>current->floor_Number)
+			else if (cur_floor>current->floorNumber)
 			{
-				for (i = cur_floor; i > current->floor_Number; i--)
+				for (i = cur_floor; i > current->floorNumber; i--)
 				{
 					printf("当前楼层%d,正在向下运行\n", i);
 					Sleep(500);
