@@ -1,4 +1,6 @@
 #include "elevator.h"
+
+
 DWORD WINAPI input_1(LPVOID parameter)
 {
 	/*利用链表建立队列*/

@@ -32,73 +32,36 @@ main()
 
 	int policy = getchar();
 
-	HANDLE th1;
-	HANDLE th2;
-	if (policy == '1')
+	HANDLE th1=NULL;
+	HANDLE th2=NULL;
+	if (policy ==1)
 	{
 		th1 = CreateThread(NULL, 0, input_1, NULL, 0, NULL);
 		th2 = CreateThread(NULL, 0, output_1, NULL, CREATE_SUSPENDED, NULL);
 		while (head.floorNumber == 0)
 			;
 		ResumeThread(th2);
-}
-	else if (policy == '2')
+		
+     }
+	else if (policy ==2)
 	{
 		th1 = CreateThread(NULL, 0, input_1, NULL, 0, NULL);
 		th2 = CreateThread(NULL, 0, output_1, NULL, 0, NULL);
+	
 	}
-	WaitForSingleObject(th1,INFINITE);
-	//WaitForSingleObject(th2,INFINITE);
-
+	WaitForSingleObject(th1, INFINITE);
+	WaitForSingleObject(th2, INFINITE);
+	
 }
 
 
-int innerReq(list *allCmd, int goal)
-{
-	(*allCmd).floorNumber = goal;
-	(*allCmd).up_Down = 0;
-	return TRUE;
-}
+
 DWORD WINAPI output_1(LPVOID parameter)
 {
-	list *pre = NULL;
-	list *current = root;
-
 	while (1)
 	{
-		if (current != NULL)
-		{
-			int i;
-
-			if (cur_floor<current->floorNumber)
-			{
-				for (i = cur_floor; i < current->floorNumber; i++)
-				{
-					printf("当前楼层%d,正在向上运行\n", i);
-					Sleep(500);
-				}
-				printf("到达目的楼层%d\n\n", i);
-				Sleep(2000);
-			}
-
-			else if (cur_floor>current->floorNumber)
-			{
-				for (i = cur_floor; i > current->floorNumber; i--)
-				{
-					printf("当前楼层%d,正在向下运行\n", i);
-					Sleep(500);
-				}
-				printf("到达目的楼层%d\n\n", i);
-				Sleep(2000);
-			}
-			cur_floor = i;
-
-			pre = current;
-		}
-		while (current->next == NULL)
-			;
-		current = current->next;
-		free(pre);
-
+		judgeGoalFloor1_State(&head);
+		judgeUpDown_State(curFloor, goalFloor);
 	}
+
 }
