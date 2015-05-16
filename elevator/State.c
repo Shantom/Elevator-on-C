@@ -6,12 +6,6 @@
 //////////////////////
 #include"elevator.h"
 
-extern void judgeUpDown_State(int curFloor, int goalFloor);//状态判断
-extern void  judgeGoalFloor1_State(list *);//策略1目标楼层判断
-extern void  judgeGoalFloor2_State(list *);//策略2目标楼层判断
-extern void  judgeGoalFloor3_State(list *);//策略3目标楼层判断
-extern void  judgeGoalFloor4_State(list *);//策略4目标楼层判断
-extern void  timeRecord_State();//时间记录函数
 
 /*
 *状态判断
@@ -33,6 +27,9 @@ judgeUpDown_State(int currentFloor,int goalFloor)
 */
 void  judgeGoalFloor1_State(list **allCmd)
 {
+	while ((*allCmd)->next == NULL)
+		Sleep(1);//当没有下一条指令
+
 	goalFloor = (**allCmd).floorNumber;
 	(*allCmd) = (*allCmd)->next;
 }
@@ -59,7 +56,7 @@ void  judgeGoalFloor2_State()
 	}
 	else if (elevState == VACANT)
 	{
-		
+		goalFloor = 0;
 	}
 }
 //void  judgeGoalFloor3_State(list *)

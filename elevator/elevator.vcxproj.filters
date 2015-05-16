@@ -15,12 +15,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="In.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="main.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Run.c">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -28,6 +22,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Out.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="In.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

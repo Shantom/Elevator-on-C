@@ -1,5 +1,39 @@
-﻿生成启动时间为 5/15/2015 10:55:24 PM。
+﻿生成启动时间为 5/16/2015 5:24:22 PM。
+     1>项目“C:\Users\thief\Documents\GitHub\Elevator-on-C\elevator\elevator.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         F:\Program Files\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:prompt In.c Out.c Run.c State.c main.c
+         main.c
+         State.c
+     1>c:\users\thief\documents\github\elevator-on-c\elevator\state.c(29): warning C4028: 形参 1 与声明不同
+         Run.c
+         Out.c
+         In.c
+         正在生成代码...
+       Link:
+         F:\Program Files\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\thief\Documents\GitHub\Elevator-on-C\Debug\elevator.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\thief\Documents\GitHub\Elevator-on-C\Debug\elevator.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\thief\Documents\GitHub\Elevator-on-C\Debug\elevator.lib" /MACHINE:X86 Debug\In.obj
+         Debug\main.obj
+         Debug\Out.obj
+         Debug\Run.obj
+         Debug\State.obj
+     1>main.obj : error LNK2005: _head 已经在 In.obj 中定义
+     1>main.obj : error LNK2005: _curFloor 已经在 In.obj 中定义
+     1>main.obj : error LNK2005: _goalFloor 已经在 In.obj 中定义
+     1>main.obj : error LNK2005: _elevState 已经在 In.obj 中定义
+     1>Out.obj : error LNK2005: _head 已经在 In.obj 中定义
+     1>Out.obj : error LNK2005: _curFloor 已经在 In.obj 中定义
+     1>Out.obj : error LNK2005: _goalFloor 已经在 In.obj 中定义
+     1>Out.obj : error LNK2005: _elevState 已经在 In.obj 中定义
+     1>Run.obj : error LNK2005: _head 已经在 In.obj 中定义
+     1>Run.obj : error LNK2005: _curFloor 已经在 In.obj 中定义
+     1>Run.obj : error LNK2005: _goalFloor 已经在 In.obj 中定义
+     1>Run.obj : error LNK2005: _elevState 已经在 In.obj 中定义
+     1>State.obj : error LNK2005: _head 已经在 In.obj 中定义
+     1>State.obj : error LNK2005: _curFloor 已经在 In.obj 中定义
+     1>State.obj : error LNK2005: _goalFloor 已经在 In.obj 中定义
+     1>State.obj : error LNK2005: _elevState 已经在 In.obj 中定义
+     1>C:\Users\thief\Documents\GitHub\Elevator-on-C\Debug\elevator.exe : fatal error LNK1169: 找到一个或多个多重定义的符号
+     1>已完成生成项目“C:\Users\thief\Documents\GitHub\Elevator-on-C\elevator\elevator.vcxproj”(Build 个目标)的操作 - 失败。
 
-生成成功。
+生成失败。
 
-已用时间 00:00:00.17
+已用时间 00:00:02.42
