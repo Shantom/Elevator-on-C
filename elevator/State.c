@@ -25,13 +25,13 @@ judgeUpDown_State(int currentFloor,int goalFloor)
 /*
 *策略1目标楼层判断
 */
-void  judgeGoalFloor1_State(list **allCmd)
+void  judgeGoalFloor1_State(list *allCmd)
 {
-	while ((*allCmd)->next == NULL)
+	while ((allCmd)->next == NULL)
 		Sleep(1);//当没有下一条指令
 
-	goalFloor = (**allCmd).floorNumber;
-	(*allCmd) = (*allCmd)->next;
+	goalFloor = (*allCmd).floorNumber;
+	allCmd = (allCmd)->next;
 }
 
 /*

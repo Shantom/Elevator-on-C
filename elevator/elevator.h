@@ -9,7 +9,7 @@ typedef struct CommandList{
 	struct CommandList *next;
 }list;
 
- list head = { 0 };
+ list head;
 
 /*顺便服务策略的指示灯*/
 BOOL upCmd[8];
@@ -64,7 +64,7 @@ void timer_Out();//时间片函数
 
 
 
-int curFloor = 1;
-int goalFloor = 1;
-int elevState = VACANT;
+int curFloor;
+int goalFloor;
+int elevState;
 
