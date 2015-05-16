@@ -22,6 +22,11 @@
 */
 
 #include "elevator.h"
+list head = { 0 };
+int curFloor=1;
+int goalFloor=1;
+int elevState=VACANT;
+
 
 main()
 {
