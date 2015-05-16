@@ -66,6 +66,7 @@
   <ItemGroup>
     <ClCompile Include="In.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="Out.c" />
     <ClCompile Include="Run.c" />
     <ClCompile Include="State.c" />
   </ItemGroup>

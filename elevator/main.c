@@ -53,52 +53,8 @@ main()
 }
 
 
-int innerReq(list *allCmd, int goal)
-{
-	(*allCmd).floorNumber = goal;
-	(*allCmd).up_Down = 0;
-	return TRUE;
-}
+
 DWORD WINAPI output_1(LPVOID parameter)
 {
-	list *pre = NULL;
-	list *current = root;
-
-	while (1)
-	{
-		if (current != NULL)
-		{
-			int i;
-
-			if (cur_floor<current->floorNumber)
-			{
-				for (i = cur_floor; i < current->floorNumber; i++)
-				{
-					printf("当前楼层%d,正在向上运行\n", i);
-					Sleep(500);
-				}
-				printf("到达目的楼层%d\n\n", i);
-				Sleep(2000);
-			}
-
-			else if (cur_floor>current->floorNumber)
-			{
-				for (i = cur_floor; i > current->floorNumber; i--)
-				{
-					printf("当前楼层%d,正在向下运行\n", i);
-					Sleep(500);
-				}
-				printf("到达目的楼层%d\n\n", i);
-				Sleep(2000);
-			}
-			cur_floor = i;
-
-			pre = current;
-		}
-		while (current->next == NULL)
-			;
-		current = current->next;
-		free(pre);
-
-	}
+	
 }
