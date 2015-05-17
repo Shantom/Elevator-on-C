@@ -13,25 +13,32 @@
 void
 judgeUpDown_State(int currentFloor,int goalFloor)
 {
+	if (elevState == VACANT)
+		return;        //电梯空闲
 	if (currentFloor < goalFloor)
-	    upper_Run();//电梯上行
+	    elevState=UP;  //电梯上行
 	else if (currentFloor>goalFloor)
-		downer_Run();//电梯下行
+		elevState = DOWN;  //电梯下行
 	else if (currentFloor == goalFloor)
-		pause_Run();//电梯停止
-
+		elevState = PAUSE;   //电梯停靠
 }
 
 /*
 *策略1目标楼层判断
 */
-void  judgeGoalFloor1_State(list *allCmd)
+void  judgeGoalFloor1_State(list **allCmd)
 {
-	while ((allCmd)->next == NULL)
-		Sleep(1);//当没有下一条指令
+	if ((*allCmd)->next == NULL)
+	{
+		elevState = VACANT;
+		return;
+	}
 
-	goalFloor = (*allCmd).floorNumber;
-	allCmd = (allCmd)->next;
+	/*while ((**allCmd).floorNumber == 0)
+		Sleep(1);*/
+	goalFloor = (**allCmd).floorNumber;
+	(*allCmd) = (*allCmd)->next;
+	elevState = PAUSE;
 }
 
 /*
@@ -61,7 +68,15 @@ void  judgeGoalFloor2_State()
 }
 //void  judgeGoalFloor3_State(list *)
 //void  judgeGoalFloor4_State(list *)
-//void  timeRecord_State()
+
+/*
+*时间状态记录函数
+*/
+void  timeRecord_State()
+{
+	endTime = time(NULL);
+
+}
 
 
 

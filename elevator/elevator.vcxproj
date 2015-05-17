@@ -69,6 +69,7 @@
     <ClCompile Include="Out.c" />
     <ClCompile Include="Run.c" />
     <ClCompile Include="State.c" />
+    <ClCompile Include="Thread.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="elevator.h" />

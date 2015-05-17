@@ -8,6 +8,7 @@
 */
 void upper_Run()
 {
+	Sleep(1000);
 	++curFloor;
 	win_Out(curFloor);
 }
@@ -17,6 +18,7 @@ void upper_Run()
 */
 void downer_Run()
 {
+	Sleep(1000);
 	--curFloor;
 	win_Out(curFloor);
 }
@@ -26,15 +28,20 @@ void downer_Run()
 */
 void pause_Run()
 {
+	
 	win_Out(-curFloor);
+	Sleep(500);
+
 }
 
 /*
 *¿ÕÏÐº¯Êý
 */
-void vacant_Run()
+void vacant_Run(list*allCmd)
 {
+
 	win_Out(0);
+
 }
 
 

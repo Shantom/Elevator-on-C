@@ -4,11 +4,13 @@
 DWORD WINAPI input_1(LPVOID parameter)
 {
 	/*利用链表建立队列*/
-
+	printf("当前楼层为第1层\n");
 	list *ptr = &head;
 	while (1)
 	{
 		char key = getchar();
+		getchar();
+		ptr->next = calloc(1, sizeof(list));
 		switch (key)
 		{
 		case '1':case'Q':
@@ -40,7 +42,7 @@ DWORD WINAPI input_1(LPVOID parameter)
 			break;
 
 		}
-		ptr->next = malloc(sizeof(list));
+		
 		ptr = ptr->next;
 	}
 }

@@ -3,13 +3,24 @@
 #include <windows.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include<time.h>
 
 typedef struct CommandList{
 	int floorNumber;
 	struct CommandList *next;
 }list;
 
- list head;
+list head;
+
+
+
+
+int curFloor;//当前楼层
+int goalFloor;//目标楼层
+int elevState;//电梯状态
+int curTime;//当前时间
+time_t startTime, endTime;
+
 
 /*顺便服务策略的指示灯*/
 BOOL upCmd[8];
@@ -31,8 +42,8 @@ BOOL innerCmd[9];
 #define PAUSE 3
 #define VACANT 4
 
-extern DWORD WINAPI input_1(LPVOID parameter);
-extern DWORD WINAPI output_1(LPVOID parameter);
+ DWORD WINAPI input_1(LPVOID parameter);
+ DWORD WINAPI output_1(LPVOID parameter);
 
 /*
 *运行函数
@@ -47,7 +58,7 @@ void go_Run();//go指令函数
 *状态函数
 */
 void judgeUpDown_State(int curFloor, int goalFloor);//判断当前电梯即将变换的状态
-void judgeGoalFloor1_State(list *);//策略1目标楼层判断
+void judgeGoalFloor1_State(list **);//策略1目标楼层判断
 void judgeGoalFloor2_State();//策略2目标楼层判断
 void judgeGoalFloor3_State(list *);//策略3目标楼层判断
 void judgeGoalFloor4_State(list *);//策略4目标楼层判断
@@ -58,13 +69,8 @@ void angerJudge_State();//判断目标楼层和运行中电梯相差一层时忽略请求
 *输出函数
 */
 void file_Out();//文本输出函数
-void win_Out();//控制台窗口输出函数
+void win_Out(int floor);//控制台窗口输出函数
 void pilot_Out();//指示灯输出函数
 void timer_Out();//时间片函数
 
-
-
-int curFloor;
-int goalFloor;
-int elevState;
 
