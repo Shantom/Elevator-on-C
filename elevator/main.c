@@ -59,8 +59,8 @@ main()
      }
 	else if (policy =='2')
 	{
-		th1 = CreateThread(NULL, 0, input_1, NULL, 0, NULL);
-		th2 = CreateThread(NULL, 0, output_1, NULL, 0, NULL);
+		th1 = CreateThread(NULL, 0, input_2, NULL, 0, NULL);
+		th2 = CreateThread(NULL, 0, output_2, NULL, 0, NULL);
 	
 	}
 	WaitForSingleObject(th1, INFINITE);

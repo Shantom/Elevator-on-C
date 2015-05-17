@@ -44,7 +44,8 @@ BOOL innerCmd[9];
 
  DWORD WINAPI input_1(LPVOID parameter);
  DWORD WINAPI output_1(LPVOID parameter);
-
+ DWORD WINAPI input_2(LPVOID parameter);
+ DWORD WINAPI output_2(LPVOID parameter);
 /*
 *ÔËÐÐº¯Êý
 */

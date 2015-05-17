@@ -56,7 +56,7 @@ void  judgeGoalFloor2_State()
 	}
 	else if (elevState == DOWN)
 	{
-		while (upCmd[curFloor]!= 1&&curFloor>0)
+		while (downCmd[curFloor]!= 1&&curFloor>0)
 			curFloor--;
 
 		goalFloor = upCmd[curFloor];

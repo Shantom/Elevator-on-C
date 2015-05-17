@@ -37,7 +37,7 @@ void pause_Run()
 /*
 *¿ÕÏÐº¯Êý
 */
-void vacant_Run(list*allCmd)
+void vacant_Run()
 {
 
 	win_Out(0);
